@@ -23,19 +23,24 @@ function img = BUPT_read_ppm(filename)
 
     % Read the pixel data
     if strcmp(header, 'P3')
-        data = fscanf(fid, '%d', [dims(1) * 3, dims(2)]);
+        data = fscanf(fid, '%d', [3, dims(1) * dims(2)]);
     else
-        data = fread(fid, [dims(1) * 3, dims(2)], 'uint8');
+        data = fread(fid, [3, dims(1) * dims(2)], 'uint8');
     end
 
-    % Convert the pixel data to a matrix
-    img = zeros(dims(2), dims(1), 3);
-    img(:, :, 1) = reshape(data(1:3:end, :), dims(2), dims(1))';
-    img(:, :, 2) = reshape(data(2:3:end, :), dims(2), dims(1))';
-    img(:, :, 3) = reshape(data(3:3:end, :), dims(2), dims(1))';
+    % Convert the pixel data to a matrix\
+    img = zeros(dims(1), dims(2), 3);
+    for i = 1:dims(1) * dims(2)
+        img(i) = data(1, i);
+        img(i + dims(1) * dims(2)) = data(2, i);
+        img(i + 2 * dims(1) * dims(2)) = data(3, i);
+    end
 
     % Normalize the image
     img = double(img) / double(maxval);
+
+    % Mirror the image along the diagonal
+    img = permute(img, [2 1 3]);
 
     % Close the file
     fclose(fid);

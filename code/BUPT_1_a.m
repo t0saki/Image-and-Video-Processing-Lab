@@ -38,3 +38,22 @@ title('Written P3 image');
 subplot(2, 2, 4);
 imshow(BUPT_read_ppm('results/test_ppm_p6_out.ppm'));
 title('Written P6 image');
+
+% Convert JPG to P3,P5 and P6
+img_jpg = imread('dataset/89217890_p0.jpg');
+gray_jpg = rgb2gray(img_jpg);
+BUPT_write_ppm(img_jpg, 'results/test_jpg_p3_out.ppm', 'P3', 'Zhengxiao Wu');
+BUPT_write_pgm(gray_jpg, 'results/test_jpg_p5_out.pgm', 'P5', 'Zhengxiao Wu');
+BUPT_write_ppm(img_jpg, 'results/test_jpg_p6_out.ppm', 'P6', 'Zhengxiao Wu');
+
+% Show the written images
+figure;
+subplot(1, 3, 1);
+imshow(BUPT_read_pgm('results/test_jpg_p5_out.pgm'));
+title('Written P5 image');
+subplot(1, 3, 2);
+imshow(BUPT_read_ppm('results/test_jpg_p6_out.ppm'));
+title('Written P6 image');
+subplot(1, 3, 3);
+imshow(BUPT_read_ppm('results/test_jpg_p3_out.ppm'));
+title('Written P3 image');
