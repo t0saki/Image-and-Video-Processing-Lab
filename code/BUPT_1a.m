@@ -1,3 +1,4 @@
+% image created by Zhengxiao Wu
 % Test reading and writing PGM images in P2 and P5 formats
 img_p2 = BUPT_read_pgm('dataset/test_images/Baboon512_ASCII2014.pgm');
 BUPT_write_pgm(img_p2, 'results/test_pgm_p2_out.pgm', 'P2', 'Zhengxiao Wu');
@@ -57,3 +58,8 @@ title('Written P6 image');
 subplot(1, 3, 3);
 imshow(BUPT_read_ppm('results/test_jpg_p3_out.ppm'));
 title('Written P3 image');
+
+% Convert img with name
+img_n = imread('dataset/89217890_p0_with_name.png');
+img_n = rgb2gray(img_n);
+BUPT_write_pgm(img_n, 'results/89217890_p0_with_name.pgm', 'P5', 'Zhengxiao Wu');

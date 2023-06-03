@@ -1,3 +1,4 @@
+% image created by Zhengxiao Wu
 function filtered_img = BUPT_lowpass(img, sigma)
     % Determine the size of the kernel
     kernel_size = 2 * ceil(3 * sigma) + 1;

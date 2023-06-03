@@ -1,10 +1,11 @@
+% image created by Zhengxiao Wu
 figure();
 % img = BUPT_read_ppm('results/test_jpg_p6_out.ppm');
 img = BUPT_read_ppm('dataset/test_images/Lena512C_ASCII2014.ppm');
+% img = BUPT_read_ppm('dataset/test_images/Baboon512C_Binary2014.ppm');
 % Convert to uint8
 img = uint8(img*255);
-% img(1, 1, :) = [0, 0, 0];
-% img(2, 2, :) = [255, 255, 255];
+% img = imread('dataset/89217890_p0.jpg');
 imshow(img);
 
 figure();

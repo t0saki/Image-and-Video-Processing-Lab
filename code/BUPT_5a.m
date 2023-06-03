@@ -1,3 +1,4 @@
+% image created by Zhengxiao Wu
 img = BUPT_read_pgm('dataset/test_images/Lena512_ASCII2014.pgm');
 
 % Apply low-pass filtering with sigma = 2

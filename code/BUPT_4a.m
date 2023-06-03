@@ -1,3 +1,4 @@
+% image created by Zhengxiao Wu
 img = BUPT_read_ppm('results/test_jpg_p6_out.ppm');
 % img = BUPT_read_ppm('dataset/test_images/Lena512C_ASCII2014.ppm');
 % Convert to uint8

@@ -1,3 +1,4 @@
+% image created by Zhengxiao Wu
 function noisy_img = BUPT_add_noise(img, noise_type, noise_params)
     % Add noise to the input image
     switch noise_type

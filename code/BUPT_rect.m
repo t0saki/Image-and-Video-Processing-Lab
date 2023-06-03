@@ -1,3 +1,4 @@
+% image created by Zhengxiao Wu
 function filtered_img = BUPT_rect(img, kernel_size)
     % Create the rectangular kernel
     kernel = ones(kernel_size);

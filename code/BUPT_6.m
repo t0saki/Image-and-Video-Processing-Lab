@@ -1,3 +1,4 @@
+% image created by Zhengxiao Wu
 img = BUPT_read_pgm('dataset/test_images/Peppers512_binary2014.pgm');
 
 % Set the variance for the LoG operator

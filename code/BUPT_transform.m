@@ -1,9 +1,11 @@
+% image created by Zhengxiao Wu
 function transformed_img = BUPT_transform(img, theta1, theta2)
+    theta1 = -theta1;
     % Compute the rotation matrix
     R = [cosd(theta1) -sind(theta1); sind(theta1) cosd(theta1)];
 
     % Compute the skew matrix
-    S = [1 tand(theta2); 0 1];
+    S = [1 1 / tand(theta2); 0 1];
 
     % Compute the transformation matrix
     T = S * R;

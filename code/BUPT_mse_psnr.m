@@ -1,3 +1,4 @@
+% image created by Zhengxiao Wu
 function [mse, psnr] = BUPT_mse_psnr(img1, img2)
     img1 = double(img1);
     img2 = double(img2);

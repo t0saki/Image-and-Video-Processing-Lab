@@ -1,3 +1,4 @@
+% image created by Zhengxiao Wu
 function upsampled_img = BUPT_up(img, factor, method)
     % Determine the size of the upsampled image
     [h, w, ~] = size(img);

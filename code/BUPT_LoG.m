@@ -1,3 +1,4 @@
+% image created by Zhengxiao Wu
 function log_img = BUPT_LoG(img, variance)
     % Convert the image to double for filtering
     img = im2double(img);

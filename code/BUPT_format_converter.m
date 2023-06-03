@@ -1,3 +1,4 @@
+% image created by Zhengxiao Wu
 function gray_img = BUPT_format_converter(colour_img)
     % Convert the image to grayscale using YUV conversion
     R = double(colour_img(:, :, 1));

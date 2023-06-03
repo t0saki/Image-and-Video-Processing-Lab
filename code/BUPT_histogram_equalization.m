@@ -1,3 +1,4 @@
+% image created by Zhengxiao Wu
 function equalized_img = BUPT_histogram_equalization(img)
     % Compute the histogram values
     hist_values = BUPT_histogram(img);

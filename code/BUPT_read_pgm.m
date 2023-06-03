@@ -1,4 +1,4 @@
-% image created by Zhengxiao Wu, added due to the requirement of the course
+% image created by Zhengxiao Wu
 function img = BUPT_read_pgm(filename)
     % Open the file for reading
     fid = fopen(filename, 'r');

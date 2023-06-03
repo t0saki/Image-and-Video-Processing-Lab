@@ -1,3 +1,4 @@
+% image created by Zhengxiao Wu
 function sub_img = BUPT_subsampling(img, h_ratio, v_ratio)
     % Get the size of the input image
     [h, w] = size(img);

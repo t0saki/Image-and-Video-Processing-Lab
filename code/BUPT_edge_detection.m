@@ -1,3 +1,4 @@
+% image created by Zhengxiao Wu
 function edge_img = BUPT_edge_detection(img, method)
     % Convert the image to double for gradient calculation
     img = im2double(img);
