@@ -10,6 +10,9 @@ function log_img = BUPT_LoG(img, variance)
     gauss_filter = exp(- (X .^ 2 + Y .^ 2) / (2 * variance));
     gauss_filter = gauss_filter / sum(gauss_filter(:));
 
+    % Print the Gaussian filter kernel size
+    fprintf('Gaussian filter kernel size: %d x %d\n', filter_size, filter_size);
+
     % Apply Gaussian filtering to smooth the image
     smoothed_img = conv2(img, gauss_filter, 'same');
 

@@ -1,11 +1,16 @@
 % image created by Zhengxiao Wu
 function transformed_img = BUPT_transform(img, theta1, theta2)
     theta1 = -theta1;
+    img = double(img);
     % Compute the rotation matrix
     R = [cosd(theta1) -sind(theta1); sind(theta1) cosd(theta1)];
 
     % Compute the skew matrix
-    S = [1 1 / tand(theta2); 0 1];
+    if theta2 ~= 0
+        S = [1 tand(theta2); 0 1];
+    else
+        S = eye(2);
+    end
 
     % Compute the transformation matrix
     T = S * R;
@@ -27,7 +32,7 @@ function transformed_img = BUPT_transform(img, theta1, theta2)
     % Compute the transformed image
     transformed_img = zeros(transformed_h, transformed_w, class(img));
 
-    for y = 1:transformed_h
+    parfor y = 1:transformed_h
 
         for x = 1:transformed_w
             p = [x + min_x - 1, y + min_y - 1] * inv_T;
@@ -39,5 +44,7 @@ function transformed_img = BUPT_transform(img, theta1, theta2)
         end
 
     end
+
+    transformed_img = uint8(transformed_img);
 
 end
